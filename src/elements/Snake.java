@@ -1,20 +1,15 @@
 package src.elements;
 
-public class Snake implements BoardElement {
-    private int position;
-    private int endPosition;
+import src.board.Coordinate;
 
-    public Snake(int position, int endPosition) {
-        this.position = position;
-        this.endPosition = endPosition;
+public class Snake extends BoardElement {
+    public Snake(Coordinate start, Coordinate end) {
+        super(start, end);
     }
 
     @Override
-    public int getPosition() {
-        return position;
-    }
-
-    public int getEndPosition() {
-        return endPosition;
+    public int interact(int currentPosition) {
+        System.out.println("Oops! Snake! Going down...");
+        return end.getPosition();
     }
 }

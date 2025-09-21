@@ -1,25 +1,12 @@
 package src.player;
-public class HumanPlayer implements Player {
-    private String name;
-    private int currentPosition;
 
+public class HumanPlayer extends Player {
     public HumanPlayer(String name) {
-        this.name = name;
-        this.currentPosition = 0; 
+        super(name);
     }
 
     @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public int getCurrentPosition() {
-        return currentPosition;
-    }
-
-    @Override
-    public void setCurrentPosition(int position) {
-        this.currentPosition = position;
+    public void play() {
+        System.out.println(name + " is playing (Human).");
     }
 }

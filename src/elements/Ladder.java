@@ -1,20 +1,15 @@
 package src.elements;
 
-public class Ladder implements BoardElement {
-    private int position;
-    private int endPosition;
+import src.board.Coordinate;
 
-    public Ladder(int position, int endPosition) {
-        this.position = position;
-        this.endPosition = endPosition;
+public class Ladder extends BoardElement {
+    public Ladder(Coordinate start, Coordinate end) {
+        super(start, end);
     }
 
     @Override
-    public int getPosition() {
-        return position;
-    }
-
-    public int getEndPosition() {
-        return endPosition;
+    public int interact(int currentPosition) {
+        System.out.println("Yay! Ladder! Going up...");
+        return end.getPosition();
     }
 }

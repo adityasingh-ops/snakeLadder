@@ -1,25 +1,17 @@
 package src.player;
-public class BotPlayer implements Player {
-    private String name;
-    private int currentPosition;
 
-    public BotPlayer(String name) {
-        this.name = name;
-        this.currentPosition = 0; 
+import src.strategy.Strategy;
+
+public class BotPlayer extends Player {
+    private Strategy strategy;
+
+    public BotPlayer(String name, Strategy strategy) {
+        super(name);
+        this.strategy = strategy;
     }
 
     @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public int getCurrentPosition() {
-        return currentPosition;
-    }
-
-    @Override
-    public void setCurrentPosition(int position) {
-        this.currentPosition = position;
+    public void play() {
+        strategy.execute(this);
     }
 }

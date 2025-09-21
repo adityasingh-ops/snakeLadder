@@ -1,23 +1,22 @@
 package src.game;
-public class Dice {
-    private static final int MAX = 6;
-    private static final int MIN = 1;
-    private volatile static Dice instance = null;
 
-    private static Dice getInstance() {
+// Singleton Dice
+public class Dice {
+    private static Dice instance;
+    private int sides;
+
+    private Dice(int sides) {
+        this.sides = sides;
+    }
+
+    public static Dice getInstance(int sides) {
         if (instance == null) {
-            synchronized (Dice.class) {
-                if (instance == null) {
-                    return new Dice();
-                }
-            }
+            instance = new Dice(sides);
         }
         return instance;
     }
-    
-    private Dice() {}
 
-    public static int roll() {
-        return (int)(Math.random() * (MAX - MIN + 1)) + MIN;
+    public int roll() {
+        return 1 + (int) (Math.random() * sides);
     }
 }

@@ -1,14 +1,15 @@
 package src.elements;
 
-public class BlackHole implements BoardElement {
-    private int position;
+import src.board.Coordinate;
 
-    public BlackHole(int position) {
-        this.position = position;
+public class BlackHole extends BoardElement {
+    public BlackHole(Coordinate start, Coordinate end) {
+        super(start, end);
     }
 
     @Override
-    public int getPosition() {
-        return position;
+    public int interact(int currentPosition) {
+        System.out.println("Oh no! Black Hole! Back to start...");
+        return end.getPosition();
     }
 }

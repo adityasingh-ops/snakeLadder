@@ -1,24 +1,13 @@
 package src.board;
-import src.elements.BoardElement;
 
 public class Cell {
-    private int position;
-    private BoardElement element;
+    private Coordinate coordinate;
 
-    public Cell(int position) {
-        this.position = position;
-        this.element = null;
+    public Cell(Coordinate coordinate) {
+        this.coordinate = coordinate;
     }
 
-    public int getPosition() {
-        return position;
-    }
-
-    public BoardElement getElement() {
-        return element;
-    }
-
-    public void setElement(BoardElement element) {
-        this.element = element;
+    public Coordinate getCoordinate() {
+        return coordinate;
     }
 }
